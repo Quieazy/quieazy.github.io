@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta name="theme-color" content="white"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+
+        <!------------Ownership verfication-->
+	    <!--Google--><meta name="google-site-verification" content="96u4p6WUwHK4-uA9E4QSGF8iymDD0_80ePJLQen8dbg" />
+        
+        
+        <!------------SEO-->
+        <!--Type--><meta property="og:type" content="website"/>
+        <!--Title--><meta property="og:title" content="Quieazy"/>
+        <!--URL--><meta property="og:url" content="https://quieazy.github.io"/>
+        <!--Locale--><meta property="og:locale" content="en_US"/>
+        
+        <!-------Description-->
+        <meta property="og:description" content="Create, take, and host quizzes offline"/>
+        <meta name="description" content="Create, take, and host quizzes offline"/>
+        
+        <!-------Image-->
+        <meta property="og:image" content="https://quieazy.github.io/img/icon.png"/>
+        <!--Width--><meta property="og:image:width" content="256"/>
+        <!--Height--><meta property="og:image:height" content="256"/>
+        <!--Alt--><meta property="og:image:alt" content="Quieazy"/>
+        
+        <!-------Twitter Card-->
+        <!--Type--><meta name="twitter:card" content="summary"/>
+        <!--Title--><meta name="twitter:title" content="Quieazy"/>
+        <!--Description--><meta name="twitter:description" content="Create, take, and host quizzes offline"/>
+        <!--Image--><meta name="twitter:image" content="https://quieazy.github.io/img/icon.png"/>
+
+        
+        <!------------Site-->
+        <!--Title--><title>Quieazy</title>
+        <!--URL--><link rel="canonical" href="https://quieazy.github.io"/>
+        
+        <!-------Favicon-->
+        <link rel="icon" sizes="256x256" href="/icons/icon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/icons/icon.ico" type="image/x-icon"/>
+        
+        <!------------Styles-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <style>
+
+html, body
+{
+    margin: 0;
+    background: rgb(10, 10, 10);
+    height: 100%;
+    font-size-adjust: none;
+}
+
+body
+{
+    --font-size: 18;
+    --font-scale: calc(var(--font-size) / 12.5);
+    
+    color: white;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(12.5px * var(--font-scale));
+    user-select: none;
+    padding: 0 20px;
+}
+
+#what
+{
+    margin: auto;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#logo
+{
+    width: 100%;
+    max-width: 250px;
+    image-rendering: pixelated;
+    pointer-events: none !important;
+    margin: auto 0;
+}
+
+#what .text
+{
+    margin: auto 0;
+}
+
+#title
+{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#downloads
+{
+    margin: auto;
+    margin-top: 10px;
+}
+
+#download-items
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 6px;
+}
+
+#download-items > div
+{
+    --bgcolor: cornflowerblue;
+    --linecolor: rgb(100, 149, 237, 0.75);
+
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+    user-select: none;
+    display: block;
+    text-align: center;
+}
+
+#download-items > div .content
+{
+    border-radius: 15px;
+    padding: 5px 12px;
+    border: 2px solid var(--bgcolor);
+    box-shadow: 0 4px var(--linecolor);
+    background: var(--bgcolor);
+    min-width: 0;
+    position: relative;
+    display: flex;
+    transition: background 0.125s;
+}
+
+[mobile="0"] #download-items > div
+{
+    cursor: pointer;
+}
+
+#download-items > div:hover .content
+{
+    background: var(--bgcolor) !important;
+}
+
+#download-items > div:active .content
+{
+    background: var(--bgcolor) !important;
+    box-shadow: none;
+    top: 3px;
+}
+
+#download-items > div img
+{
+    height: calc(22px * var(--font-scale));
+    margin-right: calc(3px * var(--font-scale));
+    pointer-events: none;
+    user-select: none;
+}
+
+#download-items > div .label
+{
+    padding-bottom: 0;
+    margin: auto 0;
+}
+
+footer
+{
+    font-size: 14px;
+    padding: 10px;
+    padding-top: 20px;
+    margin: 0 -15px;
+    color: rgb(160, 160, 160);
+}
+
+.faded
+{
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s opacity, 0.5s pointer-events;
+}
+
+.faded[show="1"]
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+        </style>
+    </head>
+    
+    <body>
+        <div id="what">
+            <img id="logo" class="faded" src="img/icon.png">
+            <div class="text">
+                <h1 id="title" class="faded">Quieazy</h1>
+                <div id="info0" class="faded">Create and take quizzes.</div>
+                <div id="info1" class="faded">Host and monitor live.</div>
+                <div id="info2" class="faded">All offline.</div>
+            </div>
+        </div>
+        <div id="downloads" class="faded">
+            <h3>Downloads</h3>
+            <div id="download-items">
+                <div class="android" onclick="window.location='/download/?os=android'"><div class="content">
+                    <img src="img/android.svg">
+                    <div class="label"></div>
+                </div></div>
+                <div class="win" onclick="window.location='/download/?os=win'"><div class="content">
+                    <img src="img/windows.svg">
+                    <div class="label"></div>
+                </div></div>
+            </div>
+        </div>
+        <footer>
+            <div>&copy; Team Quieazy & Contributors 2025</div>
+            <div>&copy; CalmBubbles 2025</div>
+        </footer>
+
+        <script src="Loop.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+window.onload = async () => {
+    const inMobile = navigator.userAgent.toLowerCase().indexOf("mobile") >= 0;
+    document.body.setAttribute("mobile", +inMobile);
+
+    if (!inMobile)
+    {
+        const winBtn = downloads.querySelector(".win");
+        winBtn.remove();
+        downloads.querySelector("#download-items").prepend(winBtn);
+    }
+
+    let counter = 0;
+
+    (async () => {
+        const andoridVerRequest = await fetch("download/android.ver");
+        downloads.querySelector(".android .label").textContent = `Android ${await andoridVerRequest.text()}`;
+        counter++;
+    })();
+
+    (async () => {
+        const winVerRequest = await fetch("download/win.ver");
+        downloads.querySelector(".win .label").textContent = `Windows ${await winVerRequest.text()}`;
+        counter++;
+    })();
+
+    await Loop.Wait(() => counter === 2);
+
+    await Loop.Delay(1);
+    logo.setAttribute("show", 1);
+    await Loop.Delay(1);
+    title.setAttribute("show", 1);
+    await Loop.Delay(1);
+    info0.setAttribute("show", 1);
+    await Loop.Delay(0.25);
+    info1.setAttribute("show", 1);
+    await Loop.Delay(0.25);
+    info2.setAttribute("show", 1);
+    await Loop.Delay(1);
+    downloads.setAttribute("show", 1);
+};
+
+        </script>
+    </body>
+</html>
