@@ -83,8 +83,8 @@ let ver = null;
 
 function Download ()
 {
-    if (os === "android") window.location = `Quieazy%20${ver}.apk`;
-    else if (os === "win") window.location = `win32/Quieazy%20${ver}%20Setup.exe`;
+    if (os === "android") window.location = `Quieazy%20${ver}.apk?t=${Date.now()}`;
+    else if (os === "win") window.location = `win32/Quieazy%20${ver}%20Setup.exe?t=${Date.now()}`;
 }
 
 window.onload = async () => {
@@ -100,7 +100,7 @@ window.onload = async () => {
         return;
     }
 
-    const verRequest = await fetch(`${os}.ver`);
+    const verRequest = await fetch(`${os}.ver?t=${Date.now()}`);
     ver = await verRequest.text();
 
     document.body.style.display = "flex";
