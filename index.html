@@ -209,7 +209,7 @@ footer
                     <img src="img/android.svg">
                     <div class="label"></div>
                 </div></div>
-                <div class="win" onclick="window.location='/download/?os=win'"><div class="content">
+                <div class="win32" onclick="window.location='/download/?os=win32'"><div class="content">
                     <img src="img/windows.svg">
                     <div class="label"></div>
                 </div></div>
@@ -229,7 +229,7 @@ window.onload = async () => {
 
     if (!inMobile)
     {
-        const winBtn = downloads.querySelector(".win");
+        const winBtn = downloads.querySelector(".win32");
         winBtn.remove();
         downloads.querySelector("#download-items").prepend(winBtn);
     }
@@ -243,8 +243,8 @@ window.onload = async () => {
     })();
 
     (async () => {
-        const winVerRequest = await fetch(`download/win.ver?t=${Date.now()}`);
-        downloads.querySelector(".win .label").textContent = `Windows ${await winVerRequest.text()}`;
+        const winVerRequest = await fetch(`download/win32.ver?t=${Date.now()}`);
+        downloads.querySelector(".win32 .label").textContent = `Windows ${await winVerRequest.text()}`;
         counter++;
     })();
 

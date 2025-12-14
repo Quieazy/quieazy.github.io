@@ -84,7 +84,7 @@ let ver = null;
 function Download ()
 {
     if (os === "android") window.location = `Quieazy%20${ver}.apk?t=${Date.now()}`;
-    else if (os === "win") window.location = `win32/Quieazy%20${ver}%20Setup.exe?t=${Date.now()}`;
+    else if (os === "win32") window.location = `win32/Quieazy%20${ver}%20Setup.exe?t=${Date.now()}`;
 }
 
 window.onload = async () => {
@@ -94,7 +94,7 @@ window.onload = async () => {
     const URLSearch = new URLSearchParams(window.location.search);
     os = decodeURIComponent(URLSearch.get("os"));
 
-    if (!(["android", "win"]).includes(os))
+    if (!(["android", "win32"]).includes(os))
     {
         window.location = "/";
         return;
